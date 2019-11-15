@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="commonFragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <!--适配移动端-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>博客详情</title>
+    <link  rel="stylesheet" type="text/css"  href="../static/lib/semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/typo.css" >
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.css" >
+    <link rel="stylesheet" type="text/css" href="../static/lib/prism/prism.css" >
+    <link rel="stylesheet" type="text/css" href="../static/lib/tocbot/tocbot.css" >
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+<!--导航-->
+<nav th:replace="commonFragment :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini home icon"></i>首页</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini tags icon"></i>标签</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini clone icon"></i>归档</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini info icon"></i>关于我</a>
+            <!--建立右侧搜索框-->
+            <div class="right menu_item item m-mobile-hidden">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="来搜搜看。。">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle m-color-black icon button m-top-right m-mobile-showed">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--中间内容-->
+<div id="waypoint" class="m-container-small m-padded-tb-large animated fadeIn">
+    <div class="ui container">
+        <!--头部-->
+        <div class="ui top attached segment">
+            <div class="ui horizontal link list">
+                <div class="item">
+                    <img src="https://unsplash.it/100/100?image=1005" alt="" class="ui avatar image">
+                    <div class="content">
+                        <a href="#" target="_blank" class="header">oddLaoma</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="calendar icon"></i> 2019-11-09
+                </div>
+                <div class="item">
+                    <i class="eye icon"></i>3214
+                </div>
+            </div>
+        </div>
+        <!--图片-->
+        <div class="ui attached segment">
+            <img src="https://unsplash.it/800/450?image=1005" alt="" class="ui rounded fluid image">
+        </div>
+        <!--内容-->
+        <div class="ui  attached padded segment">
+            <div class="ui right aligned basic segment">
+                <div class="ui orange basic label">原创</div>
+            </div>
+            <pre><code class="language-css">p { color: red } public void static main(){}</code></pre>
+            <h2 class="ui center aligned header">如何学习Maven</h2>
+            <div id="content " class="typo  typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large">
+
+                <h3 id="section3">三、附录</h3>
+
+                <h5 id="appendix1">1、<i class="serif">Typo.css</i> 排版偏重点</h5>
+                <table class="ui table" summary="Typo.css 排版偏重点">
+                    <thead>
+                    <tr>
+                        <th>类型</th>
+                        <th>语义</th>
+                        <th>标签</th>
+                        <th>注意点</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th rowspan="15">基础标签</th>
+                        <td>标题</td>
+                        <td><code>h1</code> ～ <code>h6</code></td>
+                        <td>全局不强制大小，<code>.typo</code> 中标题与其对应的内容应紧贴，并且有相应的大小设置</td>
+                    </tr>
+                    <tr>
+                        <td>上、下标</td>
+                        <td><code>sup</code>/<code>sub</code></td>
+                        <td>保持与 MicroSoft Office Word 等程序的日常排版一致</td>
+                    </tr>
+                    <tr>
+                        <td>引用</td>
+                        <td><code>blockquote</code></td>
+                        <td>显示/嵌套样式</td>
+                    </tr>
+                    <tr>
+                        <td>缩写</td>
+                        <td><code>abbr</code></td>
+                        <td>是否都有下划线，鼠标 <code>hover</code> 是否为帮助手势</td>
+                    </tr>
+                    <tr>
+                        <td>分割线</td>
+                        <td><code>hr</code></td>
+                        <td>显示的 <code>padding</code> 和 <code>margin</code>正确</td>
+                    </tr>
+                    <tr>
+                        <td>列表</td>
+                        <td><code>ul</code>/<code>ol</code>/<code>dl</code></td>
+                        <td>在全局没有 <code>list-style</code>，在 .<code>typo</code> 中对齐正确</td>
+                    </tr>
+                    <tr>
+                        <td>定义列表</td>
+                        <td><code>dl</code></td>
+                        <td>全局 <code>padding</code> 和 <code>margin</code>为0， .<code>typo</code> 中对齐正确</td>
+                    </tr>
+                    <tr>
+                        <td>选项</td>
+                        <td><code>input[type=radio[, checkbox]]</code></td>
+                        <td>与其他 <code>form</code> 元素排版时是否居中</td>
+                    </tr>
+                    <tr>
+                        <td>斜体</td>
+                        <td><code>i</code></td>
+                        <td>只设置一种斜体，让 <code>em</code> 和 <code>cite</code> 显示为正体</td>
+                    </tr>
+                    <tr>
+                        <td>强调</td>
+                        <td><code>em</code></td>
+                        <td>在全局显示正体，在 <code>.typo</code> 中显示与 <code>b</code> 和 <code>strong</code> 的样式一致，为粗体</td>
+                    </tr>
+                    <tr>
+                        <td>加强</td>
+                        <td><code>strong/b</code></td>
+                        <td>显示为粗体</td>
+                    </tr>
+                    <tr>
+                        <td>标记</td>
+                        <td><code>mark</code></td>
+                        <td>类似荧光笔</td>
+                    </tr>
+                    <tr>
+                        <td>印刷</td>
+                        <td><code>small</code></td>
+                        <td>保持为正确字体的 80% 大小，颜色设置为浅灰色</td>
+                    </tr>
+                    <tr>
+                        <td>表格</td>
+                        <td><code>table</code></td>
+                        <td>全局不显示线条，在 <code>table</code> 中显示表格外框，并且表头有浅灰背景</td>
+                    </tr>
+                    <tr>
+                        <td>代码</td>
+                        <td><code>pre</code>/<code>code</code></td>
+                        <td>字体使用 <code>courier</code> 系字体，保持与 <code>serif</code> 有比较一致的显示效果</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="5">特殊符号</th>
+                        <td>着重号</td>
+                        <td><em class="typo-em">在文字下加点</em></td>
+                        <td>在支持 <code>:after</code> 和 <code>:before</code> 的浏览器可以做渐进增强实现</td>
+                    </tr>
+                    <tr>
+                        <td>专名号</td>
+                        <td><u>林建锋</u></td>
+                        <td>专名号，有下划线，使用 <code>u</code> 或都 <code>.typo-u</code> 类</td>
+                    </tr>
+                    <tr>
+                        <td>破折号</td>
+                        <td>——</td>
+                        <td>保持一划，而非两划</td>
+                    </tr>
+                    <tr>
+                        <td>人民币</td>
+                        <td>&yen;</td>
+                        <td>使用两平等线的符号，或者 HTML 实体符号 <code>&amp;yen;</code></td>
+                    </tr>
+                    <tr>
+                        <td>删除符</td>
+                        <td>
+                            <del>已删除（deleted）</del>
+                        </td>
+                        <td>一致化各浏览器显示，中英混排正确</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">加强类</th>
+                        <td>专名号</td>
+                        <td><code>.typo-u</code></td>
+                        <td>由于 <code>u</code> 被 HTML4 放弃，在向后兼容上推荐使用 <code>.typo-u</code></td>
+                    </tr>
+                    <tr>
+                        <td>着重符</td>
+                        <td><code>.typo-em</code></td>
+                        <td>利用 <code>:after</code> 和 <code>:before</code> 实现着重符</td>
+                    </tr>
+                    <tr>
+                        <td>清除浮动</td>
+                        <td><code>.clearfix</code></td>
+                        <td>与一般 CSS Reset 保持一对致 API</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="5">注意点</th>
+                        <td colspan="3">（1）中英文混排行高/行距</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">（2）上下标在 IE 中显示效果</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">（3）块/段落分割空白是否符合设计原则</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">（4）input 多余空间问题</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">（5）默认字体色彩，目前采用 <code>#333</code> 在各种浏览显示比较好</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h5 id="appendix2">2、开源许可</h5>
+            </div>
+            <!--标签-->
+            <div class="m-padded-lr-responsive m-padded-tb-large">
+                <div class="ui basic teal label">方法论</div>
+            </div>
+            <!--赞赏-->
+            <div class="ui center aligned basic segment">
+                <button id="payButton" class="ui orange basic circular button">赞赏</button>
+            </div>
+            <div class="ui payQ flowing popup transaction hidden">
+                <div class="ui orange basic label">
+                    <div class="ui images" style="font-size: inherit !important;">
+                        <div class="image">
+                            <img src="../static/images/pay-alipay.jpg" th:src="@{/images/pay-alipay.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
+                            <div>支付宝</div>
+                        </div>
+                        <div class="image">
+                            <img src="../static/images/pay-wechat.jpg" th:src="@{/images/pay-wechat.jpg}"  alt="" class="ui rounded bordered image" style="width: 120px">
+                            <div>微信</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--博客信息-->
+        <div class="ui attached positive message">
+            <div class="ui middle aligned grid">
+                <div class="eleven wide column">
+                    <ui class="list">
+                        <li>作者：小臂</li>
+                        <li>发表时间：2019-11-10 11:24</li>
+                        <li>版权声明：自由转载</li>
+                        <li>公众号转载：请在本文末尾添加作者公众号二维码</li>
+                    </ui>
+                </div>
+                <div class="five wide column">
+                    <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                </div>
+            </div>
+        </div>
+        <!--留言区域-->
+        <div id="comment-container" class="ui bottom attached segment">
+           <div class="ui teal segment">
+               <div class="ui threaded comments">
+                   <h3 class="ui dividing header">评论区</h3>
+                   <div class="comment">
+                       <a class="avatar">
+                           <img src="https://unsplash.it/100/100?image=1005">
+                       </a>
+                       <div class="content">
+                           <a class="author">Matt</a>
+                           <div class="metadata">
+                               <span class="date">Today at 5:42PM</span>
+                           </div>
+                           <div class="text">
+                               How artistic!
+                           </div>
+                           <div class="actions">
+                               <a class="reply">回复</a>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="comment">
+                       <a class="avatar">
+                           <img src="https://unsplash.it/100/100?image=1005">
+                       </a>
+                       <div class="content">
+                           <a class="author">Elliot Fu</a>
+                           <div class="metadata">
+                               <span class="date">Yesterday at 12:30AM</span>
+                           </div>
+                           <div class="text">
+                               <p>This has been very useful for my research. Thanks as well!</p>
+                           </div>
+                           <div class="actions">
+                               <a class="reply">回复</a>
+                           </div>
+                       </div>
+                       <div class="comments">
+                           <div class="comment">
+                               <a class="avatar">
+                                   <img src="https://unsplash.it/100/100?image=1005">
+                               </a>
+                               <div class="content">
+                                   <a class="author">Jenny Hess</a>
+                                   <div class="metadata">
+                                       <span class="date">Just now</span>
+                                   </div>
+                                   <div class="text">
+                                       Elliot you are always so right :)
+                                   </div>
+                                   <div class="actions">
+                                       <a class="reply">回复</a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="comment">
+                       <a class="avatar">
+                           <img src="https://unsplash.it/100/100?image=1005">
+                       </a>
+                       <div class="content">
+                           <a class="author">Joe Henderson</a>
+                           <div class="metadata">
+                               <span class="date">5 days ago</span>
+                           </div>
+                           <div class="text">
+                               Dude, this is awesome. Thanks so much
+                           </div>
+                           <div class="actions">
+                               <a class="reply">Reply</a>
+                           </div>
+                       </div>
+                   </div>
+                  <!-- <form class="ui reply form">
+                       <div class="field">
+                           <textarea></textarea>
+                       </div>
+                       <div class="ui blue labeled submit icon button">
+                           <i class="icon edit"></i> Add Reply
+                       </div>
+                   </form>-->
+               </div>
+           </div>
+            <div class="ui form">
+                <div class="field">
+                    <textarea name="content" placeholder="请输入评论信息..." cols="30" rows="10"></textarea>
+                </div>
+                <div class="fields">
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="nickname" placeholder="请输入你的昵称">
+                        </div>
+                    </div>
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input type="text" name="email" placeholder="请输入你的邮箱">
+                        </div>
+                    </div>
+                    <div class="field m-mobile-wide m-margin-bottom-small">
+                        <button class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+    <div class="ui vertical icon buttons">
+        <button type="button" class="ui toc teal button">目录</button>
+        <a href="#comment-container" class="ui teal button">留言</a>
+        <button class="ui wechat icon button"><i class="weixin icon"></i></button>
+        <button id="toTop-button" class="ui button"><i class="chevron up icon"></i></button>
+    </div>
+</div>
+
+<!--目录弹出层-->
+<div class="ui toc-container flowing popup transaction hidden" style="width: 220px">
+    <ol class="js-toc">
+
+    </ol>
+</div>
+<!--二维码弹出层-->
+<div id="qrcode" class="ui wechat-qr flowing popup transaction hidden" style="width: 130px !important;">
+<!--
+    <img src="static/images/wechat.png" alt="" class="ui rounded image" style="width: 120px !important;">
+-->
+</div>
+
+<!--底部-->
+<footer th:replace="commonFragment :: footer" class="ui inverted vertical segment m-padded-tb-max">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" class="ui rounded image" alt="" style="width:110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted m-text-thin m-text-spaced m-opacity-mini">请联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted">Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的博客，希望你喜欢哈哈哈</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-small">Copyright@2019-2020 Designed by oddou</p>
+
+    </div>
+</footer>
+</body>
+<!--/*/<th:block th:replace="commonFragment :: script">/*/-->
+    <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/semantic/dist/semantic.js"></script>
+    <script src="../static/lib/prism/prism.js"></script>
+    <script src="../static/lib/tocbot/tocbot.js"></script>
+    <script src="../static/lib/qrcode/qrcode.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.js"></script>
+<!--/*/</th:block>/*/-->
+<script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+<script src="../static/js/blog.js" th:src="@{/js/blog.js}"></script>
+</html>

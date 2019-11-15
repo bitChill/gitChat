@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!--通用头部-->
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <!--适配移动端-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title th:relace="${title}">博客</title>
+    <link  rel="stylesheet" type="text/css"  href="../static/lib/semantic/dist/semantic.css"  th:href="@{/lib/semantic/dist/semantic.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.css" th:href="@{css/animate.css}">
+    <link rel="stylesheet" type="text/css" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" type="text/css" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" th:href="@{/css/index.css}">
+</head>
+<body>
+
+<!--通用导航-->
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="menu_item item m-mobile-hidden" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>首页</a>
+            <a href="#" class="menu_item item m-mobile-hidden" th:Classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="menu_item item m-mobile-hidden" th:Classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
+            <a href="#" class="menu_item item m-mobile-hidden" th:Classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>归档</a>
+            <a href="#" class="menu_item item m-mobile-hidden" th:Classappend="${n==5} ? 'active'"><i class="mini info icon"></i>关于我</a>
+            <!--建立右侧搜索框-->
+            <div class="right menu_item item m-mobile-hidden">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="来搜搜看。。">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle m-color-black icon button m-top-right m-mobile-showed">
+        <i class="sidebar icon"></i>
+    </a>
+
+</nav>
+
+<!--通用底部-->
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-max">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="static/images/wechat.png" th:src="@{/images/wechat.png}" class="ui rounded image" alt="" style="width:110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted m-text-thin m-text-spaced m-opacity-mini">请联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted">Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的博客，希望你喜欢哈哈哈</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-small">Copyright@2019-2020 Designed by oddou</p>
+
+    </div>
+</footer>
+
+<!--通用JS引入-->
+<th:block th:fragment="script">
+    <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/semantic/dist/semantic.js" th:src="@{/lib/semantic/dist/semantic.js}"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.js" th:src="@{/lib/tocbot/tocbot.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.js" th:src="@{/lib/qrcode/qrcode.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.js" th:src="@{/lib/waypoints/jquery.waypoints.js}"></script>
+</th:block>
+</body>
+</html>
