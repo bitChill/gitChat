@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/admin_fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <!--适配移动端-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>分类管理</title>
+    <link rel="stylesheet" type="text/css" href="../../static/lib/semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
+</head>
+<body>
+<!--导航-->
+<nav th:replace="admin/admin_fragment :: index_menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">后台管理</h2>
+            <a href="#" class="active menu_item item m-mobile-hidden"><i class="mini home icon"></i>博客</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="menu_item item m-mobile-hidden"><i class="mini tags icon"></i>标签</a>
+
+            <div class="right menu_item m-mobile-hidden menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://unsplash.it/100/100?image=1005" alt="" class="ui avatar image">
+                        laoma
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle m-color-black icon button m-top-right m-mobile-showed">
+        <i class="sidebar icon"></i>
+    </a>
+
+</nav>
+<!--二级导航-->
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a href="#" class="item">发布</a>
+            <a href="#" class="teal active item">列表</a>
+        </div>
+    </div>
+</div>
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-large">
+    <div class="ui container">
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>名称</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="type,iterStat : ${page.content}">
+                    <td th:text="${iterStat.count}">1</td>
+                    <td th:text="${type.TypeName}">helloWorld这是我的第一个博客</td>
+                    <td>
+                        <a href="#" th:href="@{/admin/types/{id}/input(id=${type.typeId})}" class="ui mini teal button">编辑</a>
+                        <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.typeId})}" class="ui mini red button">删除</a>
+
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="6">
+                        <div class="ui pagination menu">
+                            <a th:href="@{/admin/types(page=${page.number}-1)}" href="#" class="icon item"><i class="left chevron icon"></i></a>
+                            <a th:href="@{/admin/types(page=${page.number}+1)}" href="#" class="icon item"><i class="right chevron icon"></i></a>
+                        </div>
+                        <a th:href="@{/admin/types/input}" href="#" class="ui right floated teal basic button">新增</a>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="admin/admin_fragment :: footer" class="ui inverted vertical segment m-padded-tb-max">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../static/images/wechat.png" class="ui rounded image" alt="" style="width:110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted m-text-thin m-text-spaced m-opacity-mini">请联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted">Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的博客，希望你喜欢哈哈哈</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-small">Copyright@2019-2020 Designed by oddou</p>
+
+    </div>
+</footer>
+</body>
+<!--/*/<th:block th:replace="admin/admin_fragment :: script">/*/-->
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script src="../../static/lib/semantic/dist/semantic.js"></script>
+<!--/*/</th:block>/*/-->
+<script src="../../static/js/index.js" th:src="@{/js/index.js}"></script>
+<script src="../../static/admin/static/js/admin_index.js" th:src="@{/admin/static/js/admin_index.js}"></script>
+</html>

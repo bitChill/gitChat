@@ -1,9 +1,10 @@
-package top.oddou.blog.service;
+package top.oddou.blog.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.oddou.blog.dao.UserRepository;
 import top.oddou.blog.po.User;
+import top.oddou.blog.service.UserService;
 import top.oddou.blog.util.MD5Util;
 
 @Service
